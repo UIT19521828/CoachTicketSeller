@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -157,22 +159,27 @@ public class TicketDetailFragment extends Fragment {
                             seat2.set(count, false);
                         }
                     }
+                    int plus = ticket.getNumAdult() + ticket.getNumChild();
                     Map<String, Object> hm = new HashMap<>();
                     hm.put("seat1", seat1);
                     hm.put("seat2", seat2);
                     db.collection("Tickets").document(ticket.ticketID)
                             .delete().addOnCompleteListener(task -> {
                                 if(task.isSuccessful()) {
-                                    db.collection("Trips").document(ticket.getTrip())
-                                            .update(hm).addOnCompleteListener(task2 -> {
-                                                if (task2.isSuccessful()) {
-                                                    Toast.makeText(getActivity(), "Hủy vé thành công", Toast.LENGTH_SHORT).show();
-                                                    navController.navigate(R.id.action_ticketDetailFragment_to_searchTicket);
-                                                } else {
-                                                    Toast.makeText(getActivity(), "Hủy vé thất bại", Toast.LENGTH_SHORT).show();
-                                                }
-                                            }
-                                    );
+                                    DocumentReference tripRef = db.collection("Trips").document(ticket.getTrip());
+                                    tripRef.update(hm).addOnCompleteListener(task2 -> {
+                                        if (task2.isSuccessful()) {
+                                            tripRef.update("available", FieldValue.increment(plus))
+                                                    .addOnCompleteListener(task3 -> {
+                                                        Toast.makeText(getActivity(), "Hủy vé thành công", Toast.LENGTH_SHORT).show();
+                                                        navController.navigate(R.id.action_ticketDetailFragment_to_searchTicket);
+                                                    });
+                                        } else {
+                                            Toast.makeText(getActivity(), "Hủy vé thất bại", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                } else {
+                                    Toast.makeText(getActivity(), "Hủy vé thất bại", Toast.LENGTH_SHORT).show();
                                 }
                             });
 
