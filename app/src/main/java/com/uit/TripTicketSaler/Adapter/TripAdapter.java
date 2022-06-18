@@ -55,7 +55,7 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.CarViewHolder>
                         Coach tCar = task.getResult().toObject(Coach.class);
                         int money = tCar.getPrice() * t;
                         money *= (p + c / 2);
-                        holder.duration.setText(t*1.5* tCar.getSpeed() + " tiếng");
+                        holder.duration.setText("Thời gian: "+ t*1.5* tCar.getSpeed() + " tiếng");
                         holder.totalCost.setText(money + " $");
                         holder.feature.setText(tCar.getDetail());
                     }
@@ -65,7 +65,7 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.CarViewHolder>
                 }
         );
 
-        holder.plate.setText(trip.getCoach());
+        holder.plate.setText("Xe: "+ trip.getCoach());
         holder.timePickUp.setText(trip.GetDepartureDate());
         holder.availSeat.setText("còn: " + trip.getAvailable() + "chỗ");
     }

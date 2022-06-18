@@ -7,93 +7,137 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:focusableInTouchMode="false"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="16dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="8dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <RelativeLayout
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/tourbus"
+                    app:civ_border_color="@color/MediumPurple"
+                    app:civ_border_width="3dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="65"
-                android:orientation="vertical">
+                android:layout_toRightOf="@+id/img"
+                android:paddingLeft="5dp">
 
-                <TextView
-                    android:id="@+id/timePickUp"
+                <RelativeLayout
+                    android:id="@+id/t"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_height="35dp">
 
-                <TextView
-                    android:id="@+id/plate"
+                    <TextView
+                        android:id="@+id/timePickUp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="0h ngày"
+                        android:textColor="@color/Gray"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/t1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/roboto"
-                    android:textColor="#4b4b4b"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/t">
+
+
+                    <TextView
+                        android:id="@+id/plate"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="sans-serif"
+                        android:gravity="fill"
+                        android:text="Xe"
+                        android:textColor="#b3b3b3"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/totalCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/plate"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="$000"
+                        android:textColor="#f5a622"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/t2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/t1">
+
+
+                    <TextView
+                        android:id="@+id/duration"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="fill"
+                        android:text="10 tiếng"
+                        android:textColor="#b3b3b3"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/availableSeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/duration"
+                        android:gravity="center"
+                        android:text="còn chỗ"
+                        android:textColor="#E84118"
+                        android:textSize="16dp" />
+
+                </RelativeLayout>
 
                 <TextView
                     android:id="@+id/feature"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/t2"
                     android:fontFamily="@font/roboto"
-                    android:textColor="#8a8a8a"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="35"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/totalCost"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="$000"
-                    android:textAlignment="textEnd"
-                    android:textColor="#f5a622"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/duration"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/roboto"
-                    android:textAlignment="textEnd"
+                    android:gravity="fill"
+                    android:text="xe 1 tầng"
                     android:textColor="#b3b3b3"
-                    android:textSize="16sp" />
+                    android:textSize="18dp" />
+            </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/availableSeat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="textEnd"
-                    android:textColor="#E84118"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </LinearLayout>
+        </RelativeLayout>
+
 
     </androidx.cardview.widget.CardView>
 
