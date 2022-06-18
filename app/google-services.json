@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "416633369257",
+    "project_id": "ticketsale-c0f24",
+    "storage_bucket": "ticketsale-c0f24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416633369257:android:284e0c2b7a916b80966fb8",
+        "android_client_info": {
+          "package_name": "com.uit.TripTicketSaler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416633369257-733pmihkbtu17n9o70si66a85gk8lqji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvsweSzex2_LHQUJAXPUqxh1aJb3o_7N0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416633369257-733pmihkbtu17n9o70si66a85gk8lqji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

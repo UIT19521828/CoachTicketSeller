@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtTrem"><![CDATA[Trẻ em (<9 tuổi)]]></string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+</resources>

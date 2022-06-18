@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment.ServiceFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#512da8"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp">
+
+                <ImageView
+                    android:id="@+id/backPress"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/ic_arrow_back_white_24dp" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bus_image_2" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Dịch vụ"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/rubik_medium"
+                        android:text="Đừng quên mua hành lý, suất ăn!"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="-44dp"
+                    android:layout_marginRight="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/suitcases" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp">
+
+                            <TextView
+                                android:id="@+id/textVieww"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Hành lý"
+                                android:textColor="@color/black"
+                                android:textSize="24dp" />
+
+                            <TextView
+                                android:id="@+id/textVieww1"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textVieww"
+                                android:fontFamily="sans-serif"
+                                android:text="Tối đa 20kg (50k)"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkSuitcase"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_below="@id/textVieww"
+                                android:layout_alignEnd="@id/textVieww1"
+                                android:layout_marginTop="2dp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/breakfast" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp">
+
+                            <TextView
+                                android:id="@+id/textViewe"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Bữa ăn"
+                                android:textColor="@color/black"
+                                android:textSize="24dp" />
+
+                            <TextView
+                                android:id="@+id/textViewww2"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_toRightOf="@+id/textViewe"
+                                android:fontFamily="@font/calibri"
+                                android:text="(Thay đổi hàng ngày)"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/textVieww2"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textViewe"
+                                android:fontFamily="sans-serif"
+                                android:text="Sáng (15k)"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/textVieww3"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textVieww2"
+                                android:layout_marginTop="12dp"
+                                android:fontFamily="sans-serif"
+                                android:text="Bữa chính (60k)"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+
+                            <CheckBox
+                                android:id="@+id/checkBreakfast"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_below="@id/textViewe"
+                                android:layout_alignEnd="@id/textVieww3"
+                                android:layout_marginTop="2dp" />
+
+                            <CheckBox
+                                android:id="@+id/checkMeal"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_below="@+id/checkBreakfast"
+                                android:layout_alignEnd="@id/textVieww3"
+                                android:layout_marginTop="10dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/insurance" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp">
+
+                            <TextView
+                                android:id="@+id/textVie"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Bảo hiểm du lịch (50k)"
+                                android:textColor="@color/black"
+                                android:textSize="24dp" />
+
+
+                            <TextView
+                                android:id="@+id/textVie1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textVie"
+                                android:fontFamily="sans-serif"
+                                android:text="Bảo hiểm tai nạn cá nhân"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/textVie2"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textVie1"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="sans-serif"
+                                android:text="Bảo hiểm cho những trở ngại phát sinh"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkInsurance"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignEnd="@id/textVie"
+                                android:layout_marginTop="5dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/btnGoNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/buttonshape"
+                    android:fontFamily="@font/calibri"
+                    android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+                    android:text="Đi tiếp"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
