@@ -1,13 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.airbnb.android:lottie:5.0.3@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ebeef1783af5a61fdd7ca2995b3a1352/transformed/lottie-5.0.3/annotations.zip!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/047e2607948f5bdb490f63d784f2480b/transformed/lottie-5.0.3/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ebeef1783af5a61fdd7ca2995b3a1352/transformed/lottie-5.0.3/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ebeef1783af5a61fdd7ca2995b3a1352/transformed/lottie-5.0.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ebeef1783af5a61fdd7ca2995b3a1352/transformed/lottie-5.0.3/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/047e2607948f5bdb490f63d784f2480b/transformed/lottie-5.0.3/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/047e2607948f5bdb490f63d784f2480b/transformed/lottie-5.0.3/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/047e2607948f5bdb490f63d784f2480b/transformed/lottie-5.0.3/AndroidManifest.xml" />

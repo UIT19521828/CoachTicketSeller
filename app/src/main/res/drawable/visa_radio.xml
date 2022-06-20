@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:drawable="@drawable/visa_card"
+        android:drawable="@drawable/wallet"
         android:width="60dp"
         android:height="55dp" />
 

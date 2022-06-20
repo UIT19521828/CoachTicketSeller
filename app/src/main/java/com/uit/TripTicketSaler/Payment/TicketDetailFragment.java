@@ -1,9 +1,11 @@
 package com.uit.TripTicketSaler.Payment;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -47,8 +49,16 @@ public class TicketDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                BackPressClick();
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -76,10 +86,11 @@ public class TicketDetailFragment extends Fragment {
         int nA = ticket.getNumAdult();
         int nC = ticket.getNumChild();
         String service = "";
-        if(ticket.getService().get("suitcase")) service += "Hành lý";
-        if(ticket.getService().get("breakfast")) service += ",Bữa sáng";
-        if(ticket.getService().get("meal")) service += ",Bữa chính";
-        if(ticket.getService().get("insurance")) service += ",Bảo hiểm";
+        if(Boolean.TRUE.equals(ticket.getService().get("suitcase"))) service += ",Hành lý";
+        if(Boolean.TRUE.equals(ticket.getService().get("breakfast"))) service += ",Bữa sáng";
+        if(Boolean.TRUE.equals(ticket.getService().get("meal"))) service += ",Bữa chính";
+        if(Boolean.TRUE.equals(ticket.getService().get("insurance"))) service += ",Bảo hiểm";
+        if(!service.equals("")) service = service.substring(1);
 
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 
@@ -93,7 +104,7 @@ public class TicketDetailFragment extends Fragment {
             e.printStackTrace();
         }
         binding.tvStatus.setText(ticket.getStatus());
-        if(Objects.equals(ticket.getStatus(), "Chưa thanh toán")) {
+        if(!Objects.equals(ticket.getStatus(), "Đã sử dụng")) {
             binding.tvStatus.setTextColor(Color.RED);
         }
         else{
@@ -104,6 +115,7 @@ public class TicketDetailFragment extends Fragment {
         binding.tvTotalCost.setText(Integer.toString(ticket.getTotalCost()));
         binding.tvBookingDate.setText(ticket.GetPurTime());
         binding.tvCustomerName.setText(ClientAuth.Client.getUsername());
+        binding.tvTicketID.setText("ID: "+ticket.ticketID);
         String slkh = nA + " người lớn ";
         if(nC>0) slkh += nC + " trẻ em";
         binding.tvSLKH.setText(slkh);
@@ -116,18 +128,22 @@ public class TicketDetailFragment extends Fragment {
         });
         binding.btnCancel.setOnClickListener(view -> {
             CancelTicket();
-            Toast.makeText(getActivity(), "test", Toast.LENGTH_SHORT).show();
         });
         binding.backPress.setOnClickListener(view -> {
-
+            BackPressClick();
         });
         return binding.getRoot();
     }
 
     private void CancelTicket(){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Bạn có muốn hủy vé này không")
-                .setPositiveButton("Hủy vé", (dialog, id) -> {
+        builder.setMessage("Bạn có muốn hủy vé này không?")
+                .setPositiveButton("Có", (dialog, id) -> {
+                    if(Objects.equals(ticket.getStatus(), "Đã thanh toán")){
+                        ClientAuth.Client.AddToWallet(ticket.getTotalCost());
+                        db.collection("Users").document(ClientAuth.mClient.getUid())
+                                .update("balance", ClientAuth.Client.getBalance());
+                    }
                     ArrayList<Boolean> seat1 = trip.getSeat1();
                     ArrayList<Boolean> seat2 = trip.getSeat2();
 
@@ -188,5 +204,9 @@ public class TicketDetailFragment extends Fragment {
                     Toast.makeText(getActivity(), "Không hủy vé", Toast.LENGTH_SHORT).show();
                 });
         builder.show();
+    }
+
+    private void BackPressClick(){
+        navController.navigate(R.id.action_ticketDetailFragment_to_allTicketFragment);
     }
 }

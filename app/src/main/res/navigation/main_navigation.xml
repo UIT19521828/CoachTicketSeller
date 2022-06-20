@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_searchTicket_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_searchTicket_to_walletFragment"
+            app:destination="@id/walletFragment" />
     </fragment>
     <fragment
         android:id="@+id/listTrip"
@@ -75,6 +78,9 @@
         <action
             android:id="@+id/action_ticketDetailFragment_to_searchTicket"
             app:destination="@id/searchTicket" />
+        <action
+            android:id="@+id/action_ticketDetailFragment_to_allTicketFragment"
+            app:destination="@id/allTicketFragment" />
     </fragment>
     <fragment
         android:id="@+id/allTicketFragment"
@@ -95,6 +101,15 @@
         tools:layout="@layout/fragment_user_profile" >
         <action
             android:id="@+id/action_userProfileFragment_to_searchTicket"
+            app:destination="@id/searchTicket" />
+    </fragment>
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.uit.TripTicketSaler.AccountManager.WalletFragment"
+        android:label="fragment_wallet"
+        tools:layout="@layout/fragment_wallet" >
+        <action
+            android:id="@+id/action_walletFragment_to_searchTicket"
             app:destination="@id/searchTicket" />
     </fragment>
 </navigation>

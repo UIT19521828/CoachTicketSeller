@@ -3,8 +3,6 @@
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8804c34e53e281fe039dff2ce738679e/transformed/play-services-measurement-sdk-21.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b1b5a92428f55234f7d94cc4e77b0918/transformed/jetified-play-services-measurement-sdk-21.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8804c34e53e281fe039dff2ce738679e/transformed/play-services-measurement-sdk-21.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8804c34e53e281fe039dff2ce738679e/transformed/play-services-measurement-sdk-21.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2987cd583d0d724cc6cd2f4e0f938909/transformed/play-services-measurement-sdk-21.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2987cd583d0d724cc6cd2f4e0f938909/transformed/play-services-measurement-sdk-21.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2987cd583d0d724cc6cd2f4e0f938909/transformed/play-services-measurement-sdk-21.0.0/jars/classes.jar!/" />

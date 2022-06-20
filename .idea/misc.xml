@@ -66,6 +66,34 @@
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/list_trip.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/search_trip.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/menu/drawer_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable-v24/buttonshape.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/background_drawer.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/button_corner_gradient.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/cash_radio.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/double_button.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/double_button_right.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/ic_baseline_replay_24.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/ic_baseline_swap_horizontal_circle_24.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/my_border.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/text_view_corner.xml" value="0.2375" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/drawable/visa_radio.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/activity_main.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/fragment_detail_trip.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/fragment_list_trip.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/fragment_search_ticket.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/fragment_sign_up.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/fragment_ticket_detail.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/fragment_total_cost.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/fragment_user_profile.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/fragment_wallet.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/header_drawer.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/item_list_ticket.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/item_ticket.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/item_transition_history.xml" value="0.23125" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/layout/popup_transition.xml" value="0.23125" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicketSeller/app/src/main/res/menu/drawer_menu.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/drawable-v24/buttonshape.xml" value="0.2265" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/drawable-v24/ic_baseline_info_24.xml" value="0.1355" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/drawable-v24/ic_location_on_light_blue_24dp.xml" value="0.2265" />
@@ -96,7 +124,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

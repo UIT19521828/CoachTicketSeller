@@ -9,6 +9,9 @@
         <item android:id="@+id/menuAllTicket"
             android:title="Vé đã mua"
             android:icon="@drawable/ic_baseline_ballot_24"/>
+        <item android:id="@+id/menuWallet"
+            android:title="Ví App"
+            android:icon="@drawable/ic_baseline_account_balance_wallet_24"/>
         <item android:id="@+id/menuCall"
             android:title="Hỗ trợ: 0111111111"
             android:icon="@drawable/common_full_open_on_phone"/>

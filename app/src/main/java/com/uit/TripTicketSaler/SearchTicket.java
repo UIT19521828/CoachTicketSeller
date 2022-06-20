@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -34,6 +35,7 @@ import com.uit.TripTicketSaler.Model.Trip;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Objects;
 
 public class SearchTicket extends Fragment{
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -47,8 +49,6 @@ public class SearchTicket extends Fragment{
     private TextView numPeopleTextview;
     private TextView numChildrenTextview;
     private TextView dateTextview;
-    private Button btnSearchC;
-    private ImageView btnUserProfile;
     private DrawerLayout drawerLayout;
 
     private ArrayList<City> lCity = new ArrayList<>();
@@ -83,8 +83,8 @@ public class SearchTicket extends Fragment{
         ImageButton adultM = v.findViewById(R.id.adultM);
         ImageButton childA = v.findViewById(R.id.childA);
         ImageButton childM = v.findViewById(R.id.childM);
-        btnSearchC = v.findViewById(R.id.searchCoach);
-        btnUserProfile = v.findViewById(R.id.btnUserProfile);
+        Button btnSearchC = v.findViewById(R.id.searchCoach);
+        ImageView btnUserProfile = v.findViewById(R.id.btnUserProfile);
         drawerLayout = v.findViewById(R.id.drawerMain);
         navigationView = (NavigationView) v.findViewById(R.id.navigation_menu);
 
@@ -95,10 +95,13 @@ public class SearchTicket extends Fragment{
         btnUserProfile.setOnClickListener(view -> {
             drawerLayout.openDrawer(navigationView);
         });
-        //tvUsername.setText(ClientAuth.Client.getUsername());
+        /*View header = navigationView.getHeaderView(0);
+        TextView tvUsername = header.findViewById(R.id.clientName);
+        tvUsername.setText(ClientAuth.Client.getUsername());*/
         navigationView.setNavigationItemSelectedListener(item -> {
             if(item.getItemId()==R.id.menuAllTicket) GoToAllTicket();
             if(item.getItemId()==R.id.menuProfile) {GotoProfile();}
+            if(item.getItemId()==R.id.menuWallet) {GoToWallet();}
             return true;
         });
         LoadCities();
@@ -148,7 +151,13 @@ public class SearchTicket extends Fragment{
         });
 
         btnSearchC.setOnClickListener(view -> {
-            SearchCoachClick();
+            if(Objects.equals(ClientAuth.Client.getPhoneNum(), "") ||
+                Objects.equals(ClientAuth.Client.getCmnd(), "")){
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("Xin vui lòng cập nhật thông tin người dùng trước khi đặt vé");
+                builder.show();
+            }
+            else SearchCoachClick();
         });
 
         return v;
@@ -246,5 +255,8 @@ public class SearchTicket extends Fragment{
     }
     private void GotoProfile(){
         navController.navigate(R.id.action_searchTicket_to_userProfileFragment);
+    }
+    private void GoToWallet(){
+        navController.navigate(R.id.action_searchTicket_to_walletFragment);
     }
 }

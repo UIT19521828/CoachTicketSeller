@@ -3,6 +3,7 @@ package com.uit.TripTicketSaler.Payment;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -124,9 +125,28 @@ public class TotalCostFragment extends Fragment {
         Map<String, Object> hm = new HashMap<>();
         hm.put("seat1", seat1);
         hm.put("seat2", seat2);
-        if(binding.radioCredit.isChecked()) pMethod = "Credit Card";
-        if(binding.radioVisa.isChecked()) pMethod = "Visa";
-        if(binding.radioCash.isChecked()) pMethod = "Tiền mặt";
+        String status = "";
+        if(binding.radioCredit.isChecked()) {
+            pMethod = "Thẻ ATM";
+            status = "Đã thanh toán";
+        }
+        if(binding.radioVisa.isChecked()) {
+            if(ClientAuth.Client.getBalance() < finalCost){
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("Ví không đủ tiền, vui lòng chọn hình thức thanh toán khác hoặc chuyển tiền vào ví");
+                builder.show();
+                return;
+            }
+            pMethod = "Ví App";
+            status = "Đã thanh toán";
+            ClientAuth.Client.AddToWallet(-finalCost);
+            db.collection("Users").document(ClientAuth.mClient.getUid())
+                    .update("balance", ClientAuth.Client.getBalance());
+        }
+        if(binding.radioCash.isChecked()) {
+            pMethod = "Tiền mặt";
+            status = "Chưa thanh toán";
+        }
 
         Timestamp ts = new Timestamp(new Date());
 
@@ -139,7 +159,7 @@ public class TotalCostFragment extends Fragment {
                 service,
                 getArguments().getInt("numAdult"),
                 getArguments().getInt("numChild"),
-                "Chưa thanh toán",
+                status,
                 pMethod,
                 ts
         );

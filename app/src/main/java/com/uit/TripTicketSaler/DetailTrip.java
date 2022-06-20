@@ -110,8 +110,8 @@ public class DetailTrip extends Fragment {
                             tv.setTextColor(Color.BLACK);
                             tv.setGravity(Gravity.CENTER);
                             tv.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, seatSize);
-                            layoutParams.setMargins(150, seatGaping, seatGaping, seatGaping);
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(280, seatSize);
+                            layoutParams.setMargins(85, seatGaping, seatGaping, seatGaping);
                             tv.setLayoutParams(layoutParams);
                             linearSeat.addView(tv);
                             Load3RowSeat(dataSeats2, false);
@@ -152,7 +152,7 @@ public class DetailTrip extends Fragment {
     }
 
     private void SetTextView(TextView tv, int count, boolean f1){
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(200, seatSize);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(seatSize, seatSize);
         layoutParams.setMargins(seatGaping, seatGaping, seatGaping, seatGaping);
         tv.setLayoutParams(layoutParams);
         tv.setPadding(0, 0, 0, 2 * seatGaping);

@@ -65,8 +65,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-3134" />
-                            <option name="y" value="-160" />
+                            <option name="x" value="-3160" />
+                            <option name="y" value="-69" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -164,6 +164,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_searchTicket_to_walletFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -206,6 +211,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_ticketDetailFragment_to_allTicketFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_ticketDetailFragment_to_searchTicket">
                               <value>
                                 <LayoutPositions />
@@ -249,6 +259,27 @@
                           <Point>
                             <option name="x" value="-3237" />
                             <option name="y" value="-740" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_userProfileFragment_to_searchTicket">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="walletFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-3430" />
+                            <option name="y" value="-431" />
                           </Point>
                         </option>
                       </LayoutPositions>

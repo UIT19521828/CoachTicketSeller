@@ -1,11 +1,15 @@
 package com.uit.TripTicketSaler.Model;
 
+import java.util.Map;
+
 public class AppUser {
     private String username;
     private String cmnd;
     private String phoneNum;
     private String dob;
     private String address;
+    private int balance = 0;
+    private Map<String, Integer> transition_history;
 
     public AppUser() {
     }
@@ -56,5 +60,27 @@ public class AppUser {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Map<String, Integer> getTransition_history() {
+        return transition_history;
+    }
+
+    public void setTransition_history(Map<String, Integer> transition_history) {
+        this.transition_history = transition_history;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+    public void AddToWallet(int add){
+        balance += add;
+    }
+    public void AddToTransition(String key, int value){
+        transition_history.put(key, value);
     }
 }
