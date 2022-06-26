@@ -19,6 +19,8 @@ import com.uit.TripTicketSaler.Model.AppUser;
 import com.uit.TripTicketSaler.R;
 import com.uit.TripTicketSaler.databinding.FragmentSignUpBinding;
 
+import java.util.HashMap;
+
 public class SignUpFragment extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FragmentSignUpBinding binding;
@@ -66,6 +68,8 @@ public class SignUpFragment extends Fragment {
                         if(task.isSuccessful()){
                             AppUser newUser = new AppUser();
                             newUser.ChangeDataUser(_username, "", "", "", "");
+                            newUser.setTransition_history(new HashMap<>());
+                            newUser.setBalance(0);
                             ClientAuth.Client = newUser;
                             ClientAuth.mClient = ClientAuth.mAuth.getCurrentUser();
                             db.collection("Users").document(ClientAuth.mClient.getUid()).set(newUser);
